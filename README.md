@@ -1,4 +1,4 @@
-# ChatRoom
+# 简版聊天室
 NodeJs + Socket.io + Express + MongoDB + AngularJs + AngularMaterial 构建的简版聊天室
 
 ** CheckOut and Run：**
