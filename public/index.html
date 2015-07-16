@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="chatroom">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="components/socket.io-client/socket.io.js"></script>
+    <link rel="stylesheet" href="components/angular-material/angular-material.css"/>
+    <!--<base href="/"/>-->
+</head>
+<body>
+<div layout="column" layout-fill>
+    <div layout="row">
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Chat Room</span>
+                </h3>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="angular" ng-show="user">
+                    <img ng-src="{{ user.avatarUrl }}" alt="{{ user.name }}" class="md-contact-avatar" height="100%"/>
+                </md-button>
+                <md-button class="md-raised md-accent" ng-show="user" ng-click="LogOut()">注销</md-button>
+            </div>
+
+        </md-toolbar>
+
+    </div>
+    <md-content style="height:600px;" ui-view>
+
+    </md-content>
+</div>
+<script type="text/javascript" src="components/angular/angular.js"></script>
+<script type="text/javascript" src="components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="components/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="components/angular-material/angular-material.js"></script>
+<script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/router.js"></script>
+<script type="text/javascript" src="scripts/services/socket.service.js"></script>
+<script type="text/javascript" src="scripts/controllers/login.js"></script>
+<script type="text/javascript" src="scripts/controllers/room.js"></script>
+</body>
+</html>

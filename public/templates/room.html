@@ -1,0 +1,33 @@
+<md-card>
+    <md-subheader class="md-primary">信息列表:</md-subheader>
+    <md-divider ng-if="messages[0]"></md-divider>
+    <md-list>
+        <md-list-item class="md-3-line" ng-repeat="item in messages">
+            <img ng-src="{{ user.avatarUrl }}?{{$index}}" class="md-avatar" alt="{{item.name}}" />
+            <div class="md-list-item-text">
+                <h4>{{item.name}}</h4>
+                <p>
+                    {{item.content}}
+                </p>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+    </md-list>
+</md-card>
+<md-card>
+    <md-subheader class="md-primary">输入信息：</md-subheader>
+    <md-divider></md-divider>
+    <div layout="column" layout-padding>
+        <md-input-container layout-padding>
+            <label>昵称</label>
+            <input ng-model="name">
+        </md-input-container>
+        <md-input-container  md-no-float layout-padding>
+            <textarea ng-model="content" md-maxlength="150" placeholder="内容"></textarea>
+        </md-input-container>
+    </div>
+    <section layout="row" layout-sm="column" layout-align="end center">
+        <md-button class="md-raised md-warn" ng-click="reset()">清除</md-button>
+        <md-button class="md-raised md-primary" ng-click="sendMessage()">提交</md-button>
+    </section>
+</md-card>
